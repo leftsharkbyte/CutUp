@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut-Up Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <h2>Cut-Up Generator</h2>
+            <button id="generateButton">Generate Cut-Up Text</button>
+            <div class="control-group">
+                <label for="canvasColor">Canvas Background Color:</label>
+                <input type="color" id="canvasColor" value="#ffffff">
+            </div>
+            <textarea id="sourceText" placeholder="Enter your source text here"></textarea>
+            <div class="control-group">
+                <label for="minWords">Min Words per Fragment:</label>
+                <input type="number" id="minWords" min="1" value="1">
+            </div>
+            <div class="control-group">
+                <label for="maxWords">Max Words per Fragment:</label>
+                <input type="number" id="maxWords" min="1" value="5">
+            </div>
+            <div class="control-group">
+                <label for="numFragments">Number of Fragments:</label>
+                <input type="number" id="numFragments" min="1" value="25">
+            </div>
+            <div class="control-group">
+                <label for="minFontSize">Min Font Size (px):</label>
+                <input type="number" id="minFontSize" min="10" value="12">
+            </div>
+            <div class="control-group">
+                <label for="maxFontSize">Max Font Size (px):</label>
+                <input type="number" id="maxFontSize" min="10" value="36">
+            </div>
+            <div class="control-group">
+                <label for="boldChance">Chance of Bold (%):</label>
+                <input type="number" id="boldChance" min="0" max="100" value="25">
+            </div>
+            <div class="control-group">
+                <label for="italicChance">Chance of Italic (%):</label>
+                <input type="number" id="italicChance" min="0" max="100" value="25">
+            </div>
+            <div class="control-group">
+                <label for="invertChance">Chance of Invert Color (%):</label>
+                <input type="number" id="invertChance" min="0" max="100" value="25">
+            </div>
+            <div class="control-group">
+                <label for="randomBgChance">Chance of Random Background Color (%):</label>
+                <input type="number" id="randomBgChance" min="0" max="100" value="25">
+            </div>
+            <div class="control-group">
+                <label for="rotateChance">Chance of Rotation (%):</label>
+                <input type="number" id="rotateChance" min="0" max="100" value="50">
+            </div>
+            <div class="control-group">
+                <label for="maxRotation">Max Rotation (degrees):</label>
+                <input type="number" id="maxRotation" min="0" max="360" value="5">
+            </div>
+            <button id="saveButton">Save State</button>
+            <input type="file" id="loadFile" style="display: none;">
+            <button id="loadButton">Load State</button>
+            <button id="clearButton">Clear Unlocked Fragments</button>
+            <div class="instructions">
+                <p>Double-click a fragment to lock/unlock it. Locked fragments cannot be moved or cleared.</p>
+            </div>
+        </div>
+        <div class="output" id="output"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
